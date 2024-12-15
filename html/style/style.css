@@ -1,0 +1,845 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,200;1,400&display=swap");
+
+/* Reset & General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body, html {
+  min-height: 100vh;
+}
+
+/* Navigation Styling */
+/* Navbar Styles */
+/* Navbar Styles */
+.navbar {
+  background-color:black; /* Light background color for the navbar */
+  padding: 10px 0; /* Adjust the padding for the navbar */
+}
+
+/* Navbar Brand (Logo) */
+.navbar-brand {
+  color: green !important; /* Green color for the brand */
+  font-size: 18px; /* Font size for the brand */
+  font-weight: bold; /* Bold text for the brand */
+}
+
+.navbar-brand img {
+  margin-right: 10px; /* Space between the logo and the text */
+}
+
+/* Navbar Links */
+.navbar-nav .nav-item .nav-link {
+  color: white !important; /* Default color for nav links */
+  font-size: 16px; /* Font size for nav links */
+  padding: 8px 15px; /* Padding for links */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: green !important; /* Hover effect for links */
+  text-decoration: none; /* Remove underline on hover */
+}
+
+/* Active Link */
+.navbar-nav .nav-item .nav-link.active {
+  color: green !important; /* Active link color */
+  font-weight: bold;
+}
+
+/* Navbar Button (Sign Up) */
+.btn-signup {
+  font-family: 'Times New Roman', Times, serif; /* Custom font for the button */
+  font-size: 16px; /* Font size for the button */
+  padding: 8px 20px; /* Padding for the button */
+  margin-left: 15px; /* Margin to separate from the links */
+  background-color: green; /* Green background for the button */
+  border: none; /* Remove default border */
+  transition: background-color 0.3s ease-in-out; /* Smooth background color transition */
+}
+
+.btn-signup a {
+  color: white !important; /* Text color for the link inside the button */
+  text-decoration: none; /* Remove underline */
+  font-family: inherit; /* Inherit font family from the button */
+}
+
+.btn-signup:hover {
+  background-color: #28a745; /* Darker green on hover */
+}
+
+/* Navbar Toggler (Mobile) */
+.navbar-toggler {
+  border: none; /* Remove the default border */
+  outline: none; /* Remove the outline */
+}
+
+.navbar-toggler-icon {
+  background-color: green; /* Change the color of the toggler icon */
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center; /* Center the navbar links on smaller screens */
+  }
+  .btn-signup {
+    width: 100%; /* Make the sign-up button full-width on mobile */
+    margin-top: 10px; /* Add some space at the top */
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-nav .nav-item {
+    margin-bottom: 10px; /* Add space between navbar items on mobile */
+  }
+  .navbar-nav .nav-item:last-child {
+    margin-bottom: 0; /* Remove margin on the last item */
+  }
+}
+
+/* Section Styling */
+#home, .slide {
+  position: relative;
+  width: 100%;
+  height: 100vh;  /* Ensures full viewport height */
+}
+
+.slide {
+  overflow: hidden;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.slide .image {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide .image-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+.image-data span.text {
+  font-size: 20px;
+  font-weight: 400;
+  font-weight: bold;
+  color: purple;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.image-data h2 {
+  font-size: 45px;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Swiper Button Styling */
+.nav-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.swiper-button-next {
+  right: 50px;
+}
+
+.swiper-button-prev {
+  left: 50px;
+}
+
+.nav-btn::before,
+.nav-btn::after {
+  font-size: 25px;
+  color: #fff;
+}
+
+.swiper-pagination-bullet {
+  opacity: 1;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  visibility: hidden;
+}
+
+.swiper-pagination-bullet-active {
+  border: 2px solid #fff;
+  background-color: #c87e4f;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    visibility: hidden;
+  }
+  .swiper-pagination-bullet {
+    visibility: visible;
+  }
+}
+
+/* Create Section */
+#create {
+  font-family: 'Arial', sans-serif;
+  height: 110vh;
+  background-image: url(https://st4.depositphotos.com/11522418/40540/i/450/depositphotos_405402496-stock-photo-bank-leaning-green-wall-rendering.jpg); /* Replace with your own background image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+/* Form container styling */
+#create .container {
+  background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 650px; /* Limit the maximum width */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  padding-bottom: -35%;
+  margin-top: 5%;
+}
+
+/* Form title */
+#create h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #45a049;
+  font-weight: bold;
+}
+
+#create label{
+  float: left;
+  color: black;
+  font-size: 16px;
+}
+
+/* Input fields */
+#create input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+/* Focused input field styling */
+#create input:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+}
+
+/* Button styling */
+#create button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+#create button:hover {
+  background-color: #45a049;
+}
+
+/* Success message styling */
+#create #message {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: opacity 0.5s ease;
+}
+
+/* Hidden class */
+#create .hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #create .container {
+      padding: 25px;
+      width: 90%;
+  }
+
+  #create h1 {
+      font-size: 24px;
+  }
+
+  #create button {
+      font-size: 16px;
+  }
+
+  #create input {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #create .container {
+      padding: 20px;
+  }
+
+  #create h1 {
+      font-size: 20px;
+  }
+
+  #create button {
+      font-size: 14px;
+      padding: 10px 16px;
+  }
+
+  #create input {
+      font-size: 12px;
+  }
+}
+
+/* deposit */
+/* Global reset for all elements */
+#deposit {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling with background image */
+#deposit {
+  font-family: 'Times New Roman', Times, serif;
+  height: 110vh;
+  background-image: url('https://st4.depositphotos.com/11522418/40540/i/450/depositphotos_405402496-stock-photo-bank-leaning-green-wall-rendering.jpg'); /* Replace with your own background image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+/* Form container styling */
+#deposit  .container {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+  margin-top: 10%;
+}
+
+/* Form title */
+#deposit  h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 33px;
+  margin-bottom: 30px;
+  color:#45a049;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Form group styling */
+#deposit  .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Label for input fields */
+#deposit  .form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  text-align: left;
+  width: 100%;
+}
+
+/* Input fields styling */
+#deposit  input, #deposit  select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  color: #333;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input field focus effect */
+#deposit  input:focus, #deposit  select:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+}
+
+/* Button styling */
+#deposit  button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Button hover effect */
+#deposit  button:hover {
+  background-color: #45a049;
+}
+
+/* Success message styling */
+#deposit  #message {
+  color: #4CAF50;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Current balance info styling */
+#deposit  #balanceInfo {
+  font-size: 18px;
+  color: #333;
+  margin-top: 30px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Hidden class for success message */
+#deposit  .hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #deposit  .container {
+    padding: 25px;
+    width: 90%;
+  }
+
+  #deposit  h1 {
+    font-size: 28px;
+  }
+
+  #deposit  button {
+    font-size: 16px;
+  }
+
+  #deposit  input, #deposit  select {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #deposit  .container {
+    padding: 20px;
+  }
+
+  #deposit  h1 {
+    font-size: 22px;
+  }
+
+  #deposit  button {
+    font-size: 14px;
+    padding: 12px 18px;
+  }
+
+  #deposit  input, #deposit  select {
+    font-size: 12px;
+  }
+}
+
+/* withdraw */
+
+/* Background styling */
+#withdraw {
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url('https://st4.depositphotos.com/11522418/40540/i/450/depositphotos_405402496-stock-photo-bank-leaning-green-wall-rendering.jpg'); /* Background image URL */
+    background-size: cover;  /* Make sure the image covers the whole page */
+    background-position: center center; /* Center the background */
+    height: 100vh;  /* Full viewport height */
+    color: #fff;  /* White text for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Withdrawal Form Section */
+#withdrawFormSection {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#withdraw h2, h1 {
+    color: #45a049;
+    font-weight: 600;
+}
+
+#withdraw label{
+color: black;
+float: left;
+}
+
+#withdrawForm {
+    margin-top: 20px;
+}
+
+#withdrawForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#withdrawForm button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#withdrawForm button:hover {
+    background-color: #45a049;
+}
+
+/* Success or Error Message */
+#withdraw #message {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#withdraw #message.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Success/Error Message Colors */
+#withdraw #message.success {
+    color: green;
+}
+
+#withdraw #message.error {
+    color: red;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #withdrawFormSection {
+        padding: 20px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    #withdrawFormSection {
+        padding: 15px;
+        width: 90%;
+    }
+
+    #withdrawForm button {
+        padding: 10px 16px;
+        font-size: 16px;
+    }
+}
+
+/* alldata */
+/* Apply a background image */
+#alldata {
+  background-image: url('https://st4.depositphotos.com/11522418/40540/i/450/depositphotos_405402496-stock-photo-bank-leaning-green-wall-rendering.jpg'); /* Background image URL */
+  background-size: cover;
+  background-position: center;
+  font-family:'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+#alldata .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+#alldata .account-header {
+  background-color: rgba(255, 255, 255, 0.85); 
+  border-radius: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 400px;
+  padding: 1%;
+}
+
+#alldata .account-header h1 {
+  margin: 0;
+  color: #45a049;
+  font-size: 30px;
+  font-weight: 550;
+}
+
+#alldata .user-info p {
+  font-size: 18px;
+  color: #131313;
+}
+
+#alldata .account-details {
+  background-color: rgba(255, 255, 255, 0.85);  
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 30px;
+  padding: 1%;
+}
+
+#alldata .account-details h2 {
+  margin-top: 0;
+  color:#45a049;
+  font-size: 30px;
+  font-weight: 550;
+}
+
+#alldata .account-details p {
+  color: #131313;
+}
+
+#alldata .account-details a {
+  text-decoration: none;
+  color: white;
+}
+
+
+#alldata .transaction-history {
+  background-color: rgba(255, 255, 255, 0.85); 
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  padding: 1%;
+}
+
+#alldata .transaction-history h2{
+  color: #45a049;
+  font-size: 30px;
+  font-weight: 550;
+}
+
+#alldata .transaction-history ul {
+  list-style: none;
+  padding: 0;
+}
+
+#alldata .transaction-history li {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #131313;
+}
+
+#alldata .action-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 10px;
+}
+
+#alldata .action-button:hover {
+  background-color: #45a049;
+}
+
+/* footer */
+/* Footer Styles */
+.footer {
+  background-color: #f8f9fa; /* Light background color */
+  color: #555; /* Default text color */
+  padding-top: 40px;
+  padding-bottom: 40px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+  position: relative;
+  animation: slideIn 1s ease-out; /* Slide-in animation for the footer */
+}
+
+/* Footer Title Styling */
+.footer .footer-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: green; /* Green color for section titles */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeIn 1s ease-out; /* Fade-in animation for section titles */
+}
+
+.footer #list{
+  margin-left: 10%;
+}
+
+/* Footer Link Styling */
+.footer .footer-link {
+  color: #555; /* Default link color */
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 8px 0;
+  transition: color 0.3s ease, padding-left 0.3s ease; /* Smooth transition for color and padding */
+}
+
+.footer .footer-link:hover {
+  color: green; /* Green on hover */
+  padding-left: 10px; /* Slight indentation on hover for effect */
+}
+
+/* Footer Text Styling */
+.footer .footer-text {
+  font-size: 16px;
+  color: orangered; /* Lighter text for copyright */
+  animation: fadeIn 1s ease-out; /* Fade-in animation for copyright text */
+}
+
+/* Hover Effects for Links */
+.footer .footer-link:hover {
+  transform: translateX(5px); /* Slight shift to the right on hover */
+}
+
+/* Footer Bottom Styling */
+.footer .footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Footer */
+@media (max-width: 767px) {
+  .footer .row {
+    text-align: center; /* Center align content on smaller screens */
+  }
+  .footer .col-lg-4 {
+    margin-bottom: 20px; /* Space between columns on smaller screens */
+  }
+  .footer .footer-title {
+    font-size: 20px; /* Slightly smaller font size for mobile */
+  }
+  .footer .footer-link {
+    font-size: 14px; /* Smaller font size for links on mobile */
+  }
+}
+
+/* Subtle Hover Animation for Footer Section */
+.footer .col:hover {
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
